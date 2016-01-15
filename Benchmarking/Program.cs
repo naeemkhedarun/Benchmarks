@@ -8,17 +8,19 @@ namespace Benchmarking
     {
         static void Main(string[] args)
         {
-//            var competitions = new BenchmarkCompetitionSwitch(new[]
-//            {
-//                typeof (PropertyGetterReflectionBenchmark),
-//                typeof (PropertySetterReflectionBenchmark)
-//            });
-//
-//            competitions.Run(args);
+            var competitions = new BenchmarkCompetitionSwitch(new[]
+            {
+                typeof (PropertyGetterReflectionBenchmark),
+                typeof (PropertySetterReflectionBenchmark),
+                typeof(DynamicProxyCallBenchmark),
+                typeof(DynamicProxyCreationBenchmark)
+            });
 
-//            new BenchmarkRunner().RunCompetition(new PropertyGetterReflectionBenchmark());
+            competitions.Run(args);
 
-            new PropertySetterReflectionBenchmark().CachedExpression();
+            //            new BenchmarkRunner().RunCompetition(new PropertyGetterReflectionBenchmark());
+
+//                        new DynamicProxyCreationBenchmark().NProxyCreation();
 
             Console.ReadKey();
         }
